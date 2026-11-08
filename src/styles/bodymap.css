@@ -1,0 +1,187 @@
+/* FORMA · Figura del cuerpo para el filtro de grupo muscular.
+   Dos vistas (frontal y trasera) dibujadas con SVG: cada músculo es una ruta
+   independiente, así que se toca directamente para filtrar. La paleta es
+   monocroma como en la referencia: cuerpo gris y grupo elegido en blanco. */
+
+.bodymap {
+  --bm-bg: #1c1c1e;
+  --bm-sil: #3a3a41;
+  --bm-muscle: #4a4a52;
+  --bm-line: #1c1c1e;
+  --bm-sel: #ffffff;
+  margin-bottom: 14px;
+}
+
+.bodymap__badge {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 7px 11px;
+  border: 1px solid var(--app-border-soft);
+  border-radius: 12px;
+  background: var(--app-surface);
+}
+
+.bodymap__badge strong {
+  color: var(--app-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bodymap__badge span {
+  color: var(--app-muted);
+  font-size: 11px;
+}
+
+.bodymap__stage {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  border: 1px solid var(--app-border);
+  border-radius: 18px;
+  /* Fondo oscuro fijo: la figura es monocroma y el grupo elegido se lee en
+     blanco, igual que en la referencia. */
+  background: var(--bm-bg);
+}
+
+.bm-figs {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  height: 100%;
+  padding: 12px 8px 8px;
+}
+
+.bm-fig {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.bm-v {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.bm-cap {
+  flex: none;
+  padding-top: 4px;
+  color: var(--app-faint);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Altura reservada mientras llega la geometría, para que nada salte. */
+.bm-ph {
+  height: 100%;
+}
+
+.bm-sil {
+  fill: var(--bm-sil);
+}
+
+.bm-m {
+  fill: var(--bm-muscle);
+  stroke: var(--bm-line);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    fill 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.bm-m:hover {
+  fill: #5c5c66;
+}
+
+.bm-m.is-dim {
+  opacity: 0.32;
+}
+
+.bm-m.is-sel {
+  fill: var(--bm-sel);
+  stroke: var(--bm-sel);
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.45));
+}
+
+.bodymap__tip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 2px 10px;
+  color: var(--app-muted);
+  font-size: 11px;
+}
+
+.bodymap__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.bodymap__legend .tp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: none;
+}
+
+.bodymap__legend .tp-chip em {
+  color: inherit;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-style: normal;
+  opacity: 0.65;
+}
+
+.bodymap__legend .tp-chip.is-on em {
+  opacity: 0.85;
+}
+
+.bodymap__summary {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 2px 12px;
+  color: var(--app-muted);
+  font-size: 11px;
+}
+
+.bodymap__summary strong {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bodymap__tag {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 7px;
+  border: 1px solid var(--app-border-soft);
+  border-radius: 999px;
+  font-size: 10px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.bodymap__tag--primary {
+  border-color: rgba(57, 255, 20, 0.4);
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.bodymap__tag--involved {
+  color: var(--app-muted);
+}

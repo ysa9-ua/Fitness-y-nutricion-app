@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Forma" parent="@android:style/Theme.Material.NoActionBar">
+        <!-- Matches the app body colour so there is no white flash between the
+             window opening and WebView's first paint. -->
+        <item name="android:windowBackground">@color/forma_background</item>
+        <item name="android:colorBackground">@color/forma_background</item>
+        <!-- Android 15+ enforces edge-to-edge; staying transparent keeps the
+             inset padding in MainActivity in charge of the layout. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:enforceStatusBarContrast">false</item>
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+
+</resources>

@@ -1,0 +1,40 @@
+# Dependencias
+node_modules/
+.pnpm-store/
+
+# Compilacion web
+dist/
+*.tsbuildinfo
+
+# Flutter / Dart
+forma/build/
+forma/.dart_tool/
+forma/.flutter-plugins
+forma/.flutter-plugins-dependencies
+forma/ios/Pods/
+forma/ios/.symlinks/
+forma/android/.gradle/
+forma/android/local.properties
+forma/android/app/debug/
+forma/android/app/profile/
+forma/android/app/release/
+*.iml
+
+# Claves y credenciales
+#
+# Las claves de Supabase van SIEMPRE por entorno (`FORMA_ANON`, `--dart-define`,
+# `VITE_SUPABASE_*`), nunca en el repositorio. Estas reglas son la red de
+# seguridad: la clave anon es publica por diseño, pero la `service_role` y los
+# *access tokens* no lo son, y sin esto acabarian en un commit por descuido.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Herramientas
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swpdbb-supabase/supabase/.temp/

@@ -1,0 +1,14 @@
+com.forma.app
+color forma_background
+color forma_body
+color forma_brand
+color forma_brand_faint
+color forma_brand_muted
+color forma_surface
+color ic_launcher_background
+drawable ic_launcher_foreground
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme_Forma
+xml network_security_config

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Vector recreation of the web logo (.brand__mark in src/styles/base.css):
+  a slightly translucent rounded square holding three neon bars of decreasing
+  height. Drawn inside the 108dp adaptive-icon canvas, scaled 1.53x from the
+  34px web version so it lands within the 72dp safe zone.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillColor="@color/forma_brand_faint"
+        android:pathData="M41.76,28 L66.24,28 A13.76,13.76 0 0 1 80,41.76 L80,66.24 A13.76,13.76 0 0 1 66.24,80 L41.76,80 A13.76,13.76 0 0 1 28,66.24 L28,41.76 A13.76,13.76 0 0 1 41.76,28 Z"
+        android:strokeColor="@color/forma_brand_muted"
+        android:strokeWidth="1.5" />
+
+    <!-- Pill-shaped bars: a round-capped stroke is easier to keep on the
+         1.53x grid than a rounded rectangle. -->
+    <path
+        android:pathData="M43.30,43.24 L43.30,63.24"
+        android:strokeColor="@color/forma_brand"
+        android:strokeLineCap="round"
+        android:strokeWidth="6" />
+    <path
+        android:pathData="M54.00,43.24 L54.00,55.59"
+        android:strokeColor="@color/forma_brand"
+        android:strokeLineCap="round"
+        android:strokeWidth="6" />
+    <path
+        android:pathData="M64.71,43.24 L64.71,47.95"
+        android:strokeColor="@color/forma_brand"
+        android:strokeLineCap="round"
+        android:strokeWidth="6" />
+
+</vector>

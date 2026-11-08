@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Mirrors the tokens in src/styles/base.css so the native chrome and the
+         web app share one palette. -->
+    <color name="forma_background">#141416</color>
+    <color name="forma_body">#09090B</color>
+    <color name="forma_surface">#1E1E22</color>
+    <color name="forma_brand">#39FF14</color>
+    <color name="forma_brand_muted">#5933FF14</color>
+    <color name="forma_brand_faint">#1433FF14</color>
+    <color name="ic_launcher_background">#141416</color>
+</resources>

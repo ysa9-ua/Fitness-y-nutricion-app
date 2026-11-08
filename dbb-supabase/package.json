@@ -1,0 +1,19 @@
+{
+  "name": "dbb-supabase",
+  "version": "1.0.0",
+  "description": "Backend de FORMA: esquema, RLS, seeds y pruebas sobre Supabase local",
+  "scripts": {
+    "reset": "supabase db reset",
+    "test": "supabase test db",
+    "test:api": "./scripts/check-api.sh",
+    "check": "supabase db reset && supabase test db && ./scripts/check-api.sh",
+    "chequeo:demo": "docker exec -i supabase_db_dbb-supabase psql -U postgres -d postgres -q -X -f - < scripts/chequeo_demo.sql",
+    "test:remoto": "./scripts/check-api.sh",
+    "aplicar:remoto": "./scripts/aplicar-remoto.sh"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "supabase": "^2.119.0"
+  }
+}

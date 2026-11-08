@@ -1,0 +1,452 @@
+.dashboard-screen {
+  overflow: hidden;
+}
+
+.dashboard-header {
+  display: flex;
+  min-height: 73px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 18px 9px;
+}
+
+.dashboard-header h1 {
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 690;
+  letter-spacing: -0.03em;
+}
+
+.dashboard-header h1 span {
+  color: var(--green);
+  font-size: 15px;
+}
+
+.dashboard-screen__body {
+  padding-top: 9px;
+}
+
+.calorie-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+  border: 1px solid var(--app-border);
+  border-radius: 17px;
+  background:
+    radial-gradient(circle at 0 0, rgba(57, 255, 20, 0.08), transparent 30%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.018), transparent),
+    var(--app-surface);
+}
+
+.calorie-hero::after {
+  position: absolute;
+  top: -50px;
+  right: -55px;
+  width: 130px;
+  height: 130px;
+  border: 1px solid rgba(57, 255, 20, 0.06);
+  border-radius: 50%;
+  box-shadow: 0 0 0 25px rgba(57, 255, 20, 0.012);
+  content: "";
+  pointer-events: none;
+}
+
+.calorie-hero__heading {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.calorie-hero__heading > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.calorie-hero__heading > div > strong {
+  margin-top: 2px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: -0.04em;
+}
+
+.calorie-hero__heading > div > strong small {
+  color: var(--app-muted);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.calorie-hero__heading > button {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 0;
+  background: transparent;
+  color: var(--app-muted);
+  font-size: 8px;
+}
+
+.calorie-hero__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 14px 0 15px;
+}
+
+.calorie-hero .progress-ring__center strong {
+  font-size: 24px;
+}
+
+.macro-list {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.macro-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.macro-row > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.macro-row span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--app-text-soft);
+  font-size: 8px;
+}
+
+.macro-row span i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px currentColor;
+}
+
+.macro-row small {
+  color: var(--app-muted);
+  font-family: var(--font-mono);
+  font-size: 7px;
+}
+
+.macro-bar {
+  height: 3px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--app-surface-3);
+}
+
+.macro-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0 0 7px currentColor;
+}
+
+.calorie-hero__footer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-top: 11px;
+  border-top: 1px solid var(--app-border-soft);
+  color: var(--app-muted);
+  font-size: 8px;
+}
+
+.calorie-hero__footer svg { color: var(--green); }
+.calorie-hero__footer strong { margin-left: auto; color: var(--app-text-soft); font-family: var(--font-mono); font-size: 7px; }
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.mini-stat {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 67px;
+  align-items: center;
+  grid-template-columns: 33px 1fr;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--app-border);
+  border-radius: 13px;
+  background: var(--app-surface);
+  text-align: left;
+}
+
+.mini-stat__icon {
+  display: grid;
+  width: 33px;
+  height: 33px;
+  place-items: center;
+  border-radius: 9px;
+}
+
+.mini-stat__icon--blue { background: rgba(79, 172, 254, 0.1); color: var(--blue); }
+.mini-stat__icon--cyan { background: rgba(52, 213, 231, 0.1); color: var(--cyan); }
+.mini-stat > span:nth-child(2) { display: flex; min-width: 0; flex-direction: column; gap: 2px; }
+.mini-stat small { color: var(--app-muted); font-family: var(--font-mono); font-size: 6px; letter-spacing: 0.06em; }
+.mini-stat strong { font-family: var(--font-display); font-size: 15px; }
+.mini-stat__progress { position: absolute; right: 10px; bottom: 10px; left: 51px; height: 2px; border-radius: 2px; background: var(--app-surface-3); }
+.mini-stat__progress i { display: block; height: 100%; border-radius: inherit; background: var(--blue); }
+.mini-stat__progress--cyan i { background: var(--cyan); }
+.mini-stat em { position: absolute; right: 9px; bottom: 17px; color: var(--app-muted); font-family: var(--font-mono); font-size: 6px; font-style: normal; }
+
+.today-workout-card {
+  overflow: hidden;
+  border: 1px solid var(--app-border);
+  border-radius: 17px;
+  background: var(--app-surface);
+}
+
+.today-workout-card__visual {
+  position: relative;
+  height: 112px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 100%, rgba(57, 255, 20, 0.14), transparent 47%),
+    linear-gradient(145deg, #1b211d, #101211 65%);
+}
+
+.workout-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(57, 255, 20, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57, 255, 20, 0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+  transform: perspective(160px) rotateX(52deg) scale(1.5) translateY(26px);
+}
+
+.workout-badge {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 7px;
+  border: 1px solid rgba(57, 255, 20, 0.14);
+  border-radius: 6px;
+  background: rgba(8, 12, 8, 0.55);
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 6px;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(5px);
+}
+
+.workout-badge i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+}
+
+.barbell-illustration {
+  position: absolute;
+  top: 51px;
+  left: 50%;
+  width: 210px;
+  height: 38px;
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+.barbell-illustration__bar {
+  position: absolute;
+  top: 17px;
+  left: 30px;
+  width: 150px;
+  height: 4px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #c5c9c6, #545a57);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.barbell-illustration__plate {
+  position: absolute;
+  top: 6px;
+  width: 17px;
+  height: 27px;
+  border: 2px solid #858b88;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #222724, #515754, #202421);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+}
+
+.barbell-illustration__plate::after {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 4px;
+  width: 5px;
+  border-radius: 1px;
+  background: #1a1e1b;
+  content: "";
+}
+
+.barbell-illustration__plate--left { left: 7px; box-shadow: 17px 0 0 -2px #2a2f2b, 17px 0 0 0 #69706b; }
+.barbell-illustration__plate--right { right: 7px; box-shadow: -17px 0 0 -2px #2a2f2b, -17px 0 0 0 #69706b; }
+
+.workout-number {
+  position: absolute;
+  right: 13px;
+  bottom: 4px;
+  color: rgba(255, 255, 255, 0.035);
+  font-family: var(--font-display);
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.today-workout-card__content {
+  padding: 14px;
+}
+
+.today-workout-card__content > div:first-child > span {
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.1em;
+}
+
+.today-workout-card__content h3 {
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 21px;
+  letter-spacing: -0.03em;
+}
+
+.today-workout-card__content p {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 5px;
+  color: var(--app-muted);
+  font-size: 8px;
+}
+
+.today-workout-card__content p i {
+  width: 2px;
+  height: 2px;
+  margin: 0 3px;
+  border-radius: 50%;
+  background: var(--app-faint);
+}
+
+.muscle-tags--compact {
+  margin-top: 10px;
+}
+
+.exercise-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 9px;
+  margin: 12px 0;
+}
+
+.exercise-preview span {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 5px;
+  color: var(--app-muted);
+  font-size: 7px;
+  white-space: nowrap;
+}
+
+.exercise-preview i {
+  display: grid;
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 5px;
+  background: var(--app-surface-2);
+  color: var(--app-text-soft);
+  font-family: var(--font-mono);
+  font-size: 6px;
+  font-style: normal;
+}
+
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.quick-actions > button {
+  display: grid;
+  min-height: 58px;
+  align-items: center;
+  grid-template-columns: 38px 1fr 18px;
+  gap: 10px;
+  padding: 9px 11px;
+  border: 1px solid var(--app-border);
+  border-radius: 12px;
+  background: var(--app-surface);
+  text-align: left;
+}
+
+.quick-actions > button > span {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.quick-actions > button:nth-child(2) > span { background: rgba(167, 139, 250, 0.1); color: var(--purple); }
+.quick-actions > button > div { display: flex; flex-direction: column; gap: 3px; }
+.quick-actions strong { font-size: 10px; }
+.quick-actions small { color: var(--app-muted); font-size: 7px; }
+.quick-actions > button > svg { color: var(--app-faint); }
+
+.weekly-goal-card {
+  margin-top: 24px;
+  padding: 14px;
+  border: 1px solid var(--app-border);
+  border-radius: 13px;
+  background: var(--app-surface);
+}
+
+.weekly-goal-card__header,
+.weekly-goal-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weekly-goal-card__header > div { display: flex; flex-direction: column; gap: 3px; }
+.weekly-goal-card__header strong { font-family: var(--font-display); font-size: 14px; }
+.weekly-goal-card__badge { padding: 5px 7px; border-radius: 6px; background: var(--app-surface-2); color: var(--app-muted); font-family: var(--font-mono); font-size: 6px; }
+.weekly-goal-card__progress { height: 4px; margin: 12px 0 8px; overflow: hidden; border-radius: 4px; background: var(--app-surface-3); }
+.weekly-goal-card__progress span { display: block; height: 100%; border-radius: inherit; background: var(--green); box-shadow: 0 0 8px rgba(57, 255, 20, 0.35); }
+.weekly-goal-card__footer { color: var(--app-muted); font-size: 7px; }
+.weekly-goal-card__footer strong { color: var(--green); font-family: var(--font-mono); font-size: 8px; }
+
+@media (max-height: 700px) {
+  .dashboard-header { min-height: 66px; padding-top: 14px; }
+  .dashboard-screen__body { padding-top: 5px; }
+  .calorie-hero__content { margin: 10px 0; }
+}

@@ -1,0 +1,213 @@
+/* FORMA · Historial de entrenamientos (pantalla nativa del shell).
+   Reutiliza los tokens del tema (`--app-*`) y el tono del plan de fuerza. */
+
+.workouts-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-screen {
+  overflow: hidden;
+}
+
+.history-screen__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-empty {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 16px 14px;
+  border: 1px dashed var(--app-border);
+  border-radius: 14px;
+  background: var(--app-surface);
+  color: var(--app-muted);
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.history-empty svg {
+  flex: 0 0 auto;
+  color: var(--green);
+}
+
+.history-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 13px;
+  border: 1px solid var(--app-border);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(57, 255, 20, 0.07), transparent 55%),
+    var(--app-surface);
+}
+
+.history-summary > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.history-summary small {
+  color: var(--app-muted);
+  font-family: var(--font-mono);
+  font-size: 5px;
+  letter-spacing: 0.08em;
+}
+
+.history-summary strong {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.history-summary strong em {
+  color: var(--app-muted);
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history-item {
+  position: relative;
+  display: grid;
+  align-items: start;
+  grid-template-columns: 36px 1fr auto;
+  gap: 9px;
+  padding: 12px 12px 12px 13px;
+  overflow: hidden;
+  border: 1px solid var(--app-border);
+  border-radius: 14px;
+  background: var(--app-surface);
+}
+
+.history-item::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: var(--green);
+  content: "";
+}
+
+.history-item__icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.history-item__icon.is-muted {
+  background: var(--app-surface-2);
+  color: var(--app-muted);
+}
+
+.history-item__copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.history-item__head {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.history-item__head strong {
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-item__head small {
+  margin-top: 1px;
+  color: var(--app-muted);
+  font-size: 6px;
+}
+
+.history-item__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.history-item__meta span {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--app-muted);
+  font-size: 6px;
+}
+
+.history-item__meta span svg {
+  color: var(--app-faint);
+}
+
+.history-item__record {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 3px;
+  padding: 4px 6px;
+  border: 1px solid rgba(57, 255, 20, 0.16);
+  border-radius: 6px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.history-item__progress {
+  width: 100%;
+  height: 3px;
+  margin-top: 3px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 3px;
+  background: var(--app-surface-3);
+  appearance: none;
+}
+
+.history-item__progress::-webkit-progress-bar {
+  background: var(--app-surface-3);
+}
+
+.history-item__progress::-webkit-progress-value {
+  background: var(--green);
+}
+
+.history-item__progress::-moz-progress-bar {
+  background: var(--green);
+}
+
+.history-item__score {
+  align-self: center;
+  color: var(--green);
+  font-family: var(--font-display);
+  font-size: 13px;
+}
